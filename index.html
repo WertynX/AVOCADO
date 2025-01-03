@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тести</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <button class="nav-button" onclick="showHome()">Головна</button>
+        <button class="nav-button" onclick="showAbout()">Про нас</button>
+        <button class="nav-button" onclick="showNews()">Новини</button>
+        <button class="nav-button" onclick="showEntrance()" id="login-register-button">Вхід/Реєстрація</button>
+        <div class="premium-badge" id="Premium" style="display: none;">Premium status</div>
+        <div id="logo">
+            <img src="images/logo.png" alt="Логотип" />
+        </div>
+    </header>
+    <div id="main-menu">
+        <h1>Ласкаво просимо!</h1>
+        <p id="welcome-message"></p>
+        <p id="tipo-test">Оберіть тест:</p>
+        <div id="tests">
+            <button class="test-button" onclick="startTest(1)">Тест 1: Математика</button>
+            <button class="test-button" onclick="startTest(2)">Тест 2: Фізика</button>
+            <button class="test-button" onclick="startTest(3)">Тест 3: Хімія</button>
+            <button class="test-button" onclick="startTest(4)">Тест 4: Історія</button>
+            <button class="test-button" onclick="startTest(5)">Тест 5: Література</button>
+            <button class="test-button" onclick="startTest(6)">Тест 6: Біологія</button>
+            <button class="test-button" onclick="startTest(7)">Тест 7: Географія</button>
+            <button class="test-button" onclick="startTest(8)">Тест 8: Англійська</button>
+        </div>
+            <h1>Розважальні тести: 
+                <span style="color: gold; font-weight: 900; background-color: #000000; min-width: 110px; max-width: 110px; padding: 7px; border-radius: 10px; font-size: 16px; margin-left: 7px;">Premium</span>  
+            </h1>            
+        <div id="tests">
+            <button class="test-button" onclick="startTest(9)">Тест 9: Новий рік</button>
+            <button class="test-button" onclick="startTest(10)">Тест 10: Хелловін</button>
+            <button class="test-button" onclick="startTest(11)">Тест 11: CS:GO 2</button>
+            <button class="test-button" onclick="startTest(12)">Тест 12: Dota 2</button>
+            <button class="test-button" onclick="startTest(13)">Тест 13: World of Tanks</button>
+            <button class="test-button" onclick="startTest(14)">Тест 14: PABG mobile</button>
+            <button class="test-button" onclick="startTest(15)">Тест 15: PUBG: Battlegrounds</button>
+        </div>
+    </div>
+    <div id="about" style="display: none;">
+        <h1>Про нас</h1>
+        <p>Це платформа для проведення тестів з різних предметів. Ви можете обрати тест, пройти його та дізнатися свої результати.</p>
+    </div>
+    <div id="Entrance" style="display: none;">
+        <div class="container">
+            <div class="form-container">
+                <h1 id="form-title">Реєстрація</h1>
+                <form id="register-form">
+                    <input type="text" id="username" placeholder="Ім'я користувача" required>
+                    <input type="password" id="password" placeholder="Пароль" required>
+                    <input type="password" id="confirm-password" placeholder="Підтвердіть пароль" required>
+                    <button type="submit">Зареєструватися</button>
+                    <p>Вже є аккаунт? <a href="#" onclick="toggleForms()">Увійти</a></p>
+                </form>
+                <div id="register-message" class="message"></div>
+
+                <h1 id="login">Вхід</h1>
+                <form id="login-form" style="display: none;">
+                    <input type="text" id="login-username" placeholder="Ім'я користувача" required>
+                    <input type="password" id="login-password" placeholder="Пароль" required>
+                    <button type="submit">Увійти</button>
+                    <p>Немає аккаунту? <a href="#" onclick="toggleForms()">Зареєструватися</a></p>
+                </form>
+                <div id="login-message" class="message"></div>
+            </div>
+        </div>
+    </div>
+    <div id="user-panel" style="display: none;">
+        <p id="current-user"></p>
+        <button onclick="logout()">Вийти</button>
+        <button onclick="changeAccount()">Змінити аккаунт</button>
+    </div>
+    <div id="test-container" style="display: none;">
+        <h1 id="question"></h1>
+        <div id="answers"></div>
+        <button id="next-button" onclick="nextQuestion()">Наступне питання</button>
+    </div>
+    <div id="results" style="display: none;">
+        <h1>Результати</h1>
+        <p id="score"></p>
+        <button onclick="returnToMenu()">Повернутися до головного меню</button>
+    </div>
+    <div id="main-news" style="display: none;">
+        <div id="news-list">
+            <button class="news-button2" onclick="startNews2()">Тобі подарунок ;)</button>
+            <button class="news-button1" onclick="startNews1()">Ми відкрились!</button>
+        </div>
+    </div>
+    <div id="newsN1" style="display: none;">
+        <h1>Ми відкрились!</h1>
+    </div>
+    <div id="newsN2" style="display: none;">
+        <h1>Тобі подарунок!</h1>
+        <p>На честь відкриття нашого сайту ми хочемо вручити Вам подарунок :)</p>
+        <button id="gift-b" class="gift-button" onclick="startGift()"></button>
+    </div>
+    <div id="giftik" style="display: none;">
+        <h2>
+            <span style="color: gold; font-weight: 900;">Premium</span>  
+        </h2>    
+        <h3>назавжди</h3>
+    </div>
+    <div id="notification" style="display: none;"></div>
+    <script src="script.js"></script>
+</body>
+</html>
