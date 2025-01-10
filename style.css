@@ -1,0 +1,393 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Стили для заголовков */
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 2em;
+    color: #333;
+    margin: 20px 0;
+}
+
+
+h2 {
+    font-size: 5em;
+    color: #333;
+    margin: 20px 0;
+}
+
+.premium {
+    color: gold; /* Золотой цвет */
+    font-weight: 900;
+}
+
+/* Исходное состояние, текст невидим */
+h2, h3, .premium {
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* Анимация появления */
+}
+
+/* Определение анимации */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* На начале анимации текст невидим */
+    }
+    100% {
+        opacity: 1; /* В конце анимации текст становится видимым */
+    }
+}
+
+/* Стили для кнопок */
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #8A2BE2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6A1BB5;
+}
+
+/* Верхнее меню */
+header {
+    background-color: #8A2BE2;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#login-register-button {
+    position: absolute;
+    top: 10px;    /* Отступ от верхнего края */
+    right: 30px;  /* Отступ от правого края */
+}
+
+.nav-button {
+    background-color: white;
+    color: #8A2BE2;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #6A1BB5;
+    color: white;
+}
+
+/* Основные блоки */
+#main-menu, #main-news, #news-list, #newsN1, #giftik, #newsN2, #about, #Entrance, #test-container, #results {
+    margin-top: 70px; /* Отступ под фиксированное меню */
+    padding: 20px;
+}
+
+#main-news, #news-list {
+    margin-top: 30px; /* Отступ под фиксированное меню */
+    padding: 20px;
+}
+
+#tests {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.test-button {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 300px;
+    min-width: 150px;
+    text-align: center;
+    padding: 20px;
+    background-color: #8A2BE2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.test-button:hover {
+    background-color: #6A1BB5;
+}
+
+/* Формы регистрации и входа */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #8A2BE2;
+    outline: none;
+}
+
+/* Стили для уведомлений */
+.message {
+    color: #e74c3c;
+    font-size: 14px;
+    text-align: center;
+}
+
+#notification {
+    position: fixed;
+    bottom: 20px; /* Расстояние от нижнего края */
+    left: 50%;
+    transform: translateX(-50%); /* Сдвиг для центрирования */
+    background-color: #8A2BE2; /* Фиолетовый фон */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    text-align: center; 
+    min-width: 300px;
+}
+
+
+
+/* Панель пользователя */
+#user-panel {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    color: #333;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: none;
+    z-index: 1000;
+}
+
+#user-panel p {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+#user-panel button {
+    padding: 10px 15px;
+    background-color: #8A2BE2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#user-panel button:hover {
+    background-color: #6A1BB5;
+}
+
+/* Вопросы теста */
+#test-container {
+    display: flex;
+    flex-wrap: wrap; /* Автоматический перенос строк */
+    justify-content: center;
+    gap: 20px; /* Расстояние между кнопками */
+}
+
+#answers button {
+    max-width: 300px; /* Максимальная ширина кнопки */
+    min-width: 150px; /* Минимальная ширина кнопки */
+    background-color: #6A1BB5;
+    border: 1px solid white;
+    flex: 1 1 calc(33.333% - 40px); /* Кнопки занимают треть строки (в процентах от ширины) */
+    text-align: center;
+}
+
+#answers button:hover {
+    background-color: #ddd;
+}
+
+/* Результаты теста */
+#results {
+    display: flex;
+    flex-wrap: wrap; /* Автоматический перенос строк */
+    justify-content: center;
+    gap: 20px; /* Расстояние между кнопками */
+}
+
+#results p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Окно аккаунта */
+.account-window {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+#logo {
+    position: absolute;
+    left: 0.1px; /* Отступ от левого края */
+    top: 0.1px;  /* Отступ от верхнего края */
+}
+
+#logo img {
+    height: 80px; /* Высота логотипа */
+    width: 90px;  /* Автоматическая пропорциональная ширина */
+}
+
+.news-button1 {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 500px;
+    min-width: 150px;
+    text-align: center;
+    padding: 80px;
+    background-color: #8A2BE2;
+    color: rgb(175, 255, 234);
+    font-weight: bold; /* Делает текст жирным */
+    text-shadow: 12px 12px 15px rgba(0, 0, 0, 0.5); /* Добавляет тень */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+    background: url(images/newsN1.png);
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Увеличена длительность перехода */
+}
+
+.news-button1:hover {
+    background-color: #6A1BB5;
+    box-shadow: 0 39px 38px rgba(0, 0, 0, 0.3); /* Тень при наведении */
+    transform: scale(1.05); /* Небольшое увеличение кнопки */
+}
+
+.news-button2 {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 500px;
+    min-width: 150px;
+    text-align: center;
+    padding: 80px;
+    background-color: #8A2BE2;
+    color: rgb(175, 255, 234);
+    font-weight: bold; /* Делает текст жирным */
+    text-shadow: 12px 12px 15px rgba(0, 0, 0, 0.5); /* Добавляет тень */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+    background: url(images/newsN2.png);
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Увеличена длительность перехода */
+}
+
+.news-button2:hover {
+    background-color: #6A1BB5;
+    box-shadow: 0 39px 38px rgba(0, 0, 0, 0.3); /* Тень при наведении */
+    transform: scale(1.05); /* Небольшое увеличение кнопки */
+}
+
+#news-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gift-button {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 543px; /* Максимальная ширина кнопки */
+    min-width: 543px; /* Минимальная ширина */
+    height: 550px;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 0;
+    margin-top: 60px; /* Отступ между изображением и текстом */
+    color: rgb(175, 255, 234);
+    font-weight: bold; /* Жирный текст */
+    text-shadow: 12px 12px 15px rgba(0, 0, 0, 0.5); /* тень */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 30px;
+    background: url(images/gift.png) no-repeat center;
+    background-size: contain;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Увеличена длительность перехода */
+}
+
+.gift-button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 39px 38px rgba(0, 0, 0, 0.3); /* Тень при наведении */
+    transform: scale(1.05); /* Небольшое увеличение кнопки */
+}
+
+.premium-badge {
+    position: fixed;
+    color: gold;
+    font-weight: 900; 
+    background-color: #000000; 
+    min-width: 110px; 
+    max-width: 510px; 
+    padding: 7px; 
+    border-radius: 10px; 
+    font-size: 16px; 
+    margin-left: 7px;
+    top: 20px;    /* Отступ от верхнего края */
+    right: 20px;  /* Отступ от правого края */
+    transition: background-color 0.3s ease;
+}
+
+/* Código do JS */
+/*
+Date.now||(Date.now=function(){return(new Date).getTime()}),function(){"use strict";for(var t=["webkit","moz"],e=0;e<t.length&&!window.requestAnimationFrame;++e){var i=t[e];window.requestAnimationFrame=window[i+"RequestAnimationFrame"],window.cancelAnimationFrame=window[i+"CancelAnimationFrame"]||window[i+"CancelRequestAnimationFrame"]}if(/iP(ad|hone|od).*OS 6/.test(window.navigator.userAgent)||!window.requestAnimationFrame||!window.cancelAnimationFrame){var s=0;window.requestAnimationFrame=function(t){var e=Date.now(),i=Math.max(s+16,e);return setTimeout(function(){t(s=i)},i-e)},window.cancelAnimationFrame=clearTimeout}}(),function(t){t.snowfall=function(e,i){function s(s,n,a,o){this.x=s,this.y=n,this.size=a,this.speed=o,this.step=0,this.stepSize=h(1,10)/100,i.collection&&(this.target=m[h(0,m.length-1)]);var r=null;i.image?(r=document.createElement("img"),r.src=i.image):(r=document.createElement("div"),t(r).css({background:i.flakeColor})),t(r).attr({"class":"snowfall-flakes"}).css({width:this.size,height:this.size,position:i.flakePosition,top:this.y,left:this.x,fontSize:0,zIndex:i.flakeIndex}),t(e).get(0).tagName===t(document).get(0).tagName?(t("body").append(t(r)),e=t("body")):t(e).append(t(r)),this.element=r,this.update=function(){if(this.y+=this.speed,this.y>l-(this.size+6)&&this.reset(),this.element.style.top=this.y+"px",this.element.style.left=this.x+"px",this.step+=this.stepSize,this.x+=y===!1?Math.cos(this.step):y+Math.cos(this.step),i.collection&&this.x>this.target.x&&this.x<this.target.width+this.target.x&&this.y>this.target.y&&this.y<this.target.height+this.target.y){var t=this.target.element.getContext("2d"),e=this.x-this.target.x,s=this.y-this.target.y,n=this.target.colData;if(void 0!==n[parseInt(e)][parseInt(s+this.speed+this.size)]||s+this.speed+this.size>this.target.height)if(s+this.speed+this.size>this.target.height){for(;s+this.speed+this.size>this.target.height&&this.speed>0;)this.speed*=.5;t.fillStyle="#fff",void 0==n[parseInt(e)][parseInt(s+this.speed+this.size)]?(n[parseInt(e)][parseInt(s+this.speed+this.size)]=1,t.fillRect(e,s+this.speed+this.size,this.size,this.size)):(n[parseInt(e)][parseInt(s+this.speed)]=1,t.fillRect(e,s+this.speed,this.size,this.size)),this.reset()}else this.speed=1,this.stepSize=0,parseInt(e)+1<this.target.width&&void 0==n[parseInt(e)+1][parseInt(s)+1]?this.x++:parseInt(e)-1>0&&void 0==n[parseInt(e)-1][parseInt(s)+1]?this.x--:(t.fillStyle="#fff",t.fillRect(e,s,this.size,this.size),n[parseInt(e)][parseInt(s)]=1,this.reset())}(this.x+this.size>d-c||this.x<c)&&this.reset()},this.reset=function(){this.y=0,this.x=h(c,d-c),this.stepSize=h(1,10)/100,this.size=h(100*i.minSize,100*i.maxSize)/100,this.element.style.width=this.size+"px",this.element.style.height=this.size+"px",this.speed=h(i.minSpeed,i.maxSpeed)}}function n(){for(r=0;r<a.length;r+=1)a[r].update();f=requestAnimationFrame(function(){n()})}var a=[],o={flakeCount:35,flakeColor:"#ffffff",flakePosition:"absolute",flakeIndex:999999,minSize:1,maxSize:2,minSpeed:1,maxSpeed:5,round:!1,shadow:!1,collection:!1,collectionHeight:40,deviceorientation:!1},i=t.extend(o,i),h=function(t,e){return Math.round(t+Math.random()*(e-t))};t(e).data("snowfall",this);var r=0,l=t(e).height(),d=t(e).width(),c=0,f=0;if(i.collection!==!1){var p=document.createElement("canvas");if(p.getContext&&p.getContext("2d"))for(var m=[],w=t(i.collection),g=i.collectionHeight,r=0;r<w.length;r++){var u=w[r].getBoundingClientRect(),x=t("<canvas/>",{"class":"snowfall-canvas"}),z=[];if(u.top-g>0){t("body").append(x),x.css({position:i.flakePosition,left:u.left+"px",top:u.top-g+"px"}).prop({width:u.width,height:g});for(var v=0;v<u.width;v++)z[v]=[];m.push({element:x.get(0),x:u.left,y:u.top-g,width:u.width,height:g,colData:z})}}else i.collection=!1}for(t(e).get(0).tagName===t(document).get(0).tagName&&(c=25),t(window).bind("resize",function(){l=t(e)[0].clientHeight,d=t(e)[0].offsetWidth}),r=0;r<i.flakeCount;r+=1)a.push(new s(h(c,d-c),h(0,l),h(100*i.minSize,100*i.maxSize)/100,h(i.minSpeed,i.maxSpeed)));i.round&&t(".snowfall-flakes").css({"-moz-border-radius":i.maxSize,"-webkit-border-radius":i.maxSize,"border-radius":i.maxSize}),i.shadow&&t(".snowfall-flakes").css({"-moz-box-shadow":"1px 1px 1px #555","-webkit-box-shadow":"1px 1px 1px #555","box-shadow":"1px 1px 1px #555"});var y=!1;i.deviceorientation&&t(window).bind("deviceorientation",function(t){y=.1*t.originalEvent.gamma}),n(),this.clear=function(){t(".snowfall-canvas").remove(),t(e).children(".snowfall-flakes").remove(),cancelAnimationFrame(f)}},t.fn.snowfall=function(e){return"object"==typeof e||void 0==e?this.each(function(){new t.snowfall(this,e)}):"string"==typeof e?this.each(function(){var e=t(this).data("snowfall");e&&e.clear()}):void 0}}(jQuery);
+0
+*/
